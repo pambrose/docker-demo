@@ -2,10 +2,10 @@ FROM  ubuntu:22.10
 
 RUN apt-get update && apt-get install -y nginx && rm -rf /var/lib/apt/lists/*
 
-RUN   mkdir /apps
-COPY  . /apps/html
+RUN mkdir /apps
+COPY index.html nginx.conf /apps/html/
 
-RUN   mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf_original && mv /apps/html/nginx.conf /etc/nginx/nginx.conf
+RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf_original && mv /apps/html/nginx.conf /etc/nginx/nginx.conf
 
 WORKDIR /apps/html
 
