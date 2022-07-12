@@ -1,7 +1,5 @@
 default: versioncheck
 
-build-all: clean stage
-
 clean:
 	./gradlew clean
 
@@ -19,7 +17,7 @@ uber-run: uberjar
 docker-run:
 	docker run --rm -p 8080:8080 pambrose/ktor-demo
 
-build-docker:
+docker-build:
 	docker build -t pambrose/ktor-demo .
 
 PLATFORMS := linux/amd64,linux/arm64/v8
