@@ -27,9 +27,7 @@ object Main : KLogging() {
     }
 
     embeddedServer(CIO, port = System.getenv("PORT")?.toInt() ?: 8080) {
-      install(CallLogging) {
-        level = Level.INFO
-      }
+      install(CallLogging) { level = Level.INFO }
       install(DefaultHeaders)
       install(StatusPages) {
         status(HttpStatusCode.NotFound) { call, status ->
