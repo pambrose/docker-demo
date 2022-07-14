@@ -46,10 +46,10 @@ object Main : KLogging() {
         get("/") {
           call.respondHtml() {
             head {
-              title { +"ktor-demo" }
+              title { +"docker-ktor" }
             }
             body {
-              h1 { +"ktor-demo" }
+              h1 { +"docker-ktor" }
               p { +"Hello World!" }
             }
           }
